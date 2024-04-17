@@ -1,0 +1,8 @@
+.place{
+    width: 984px;
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    color: #FFFFFF;
+}
