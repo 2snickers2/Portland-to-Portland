@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+}
+.content{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+
+.button::before,
+.button::after{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid red;
+    top: -10px;
+    left: 50px;
+    z-index: 1;
+    left: 70px;
+    
+    transition: all 0.8s ease 0s;
+}
+
+.button::after{
+    animation: rotate 20s infinite linear;
+}
+
+.button::before{
+    animation: rotate 25s infinite linear;
+}
+
+.button_text{
+    position: relative;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    color: rgb(0,0,0,0.3);
+    letter-spacing: 10px;
+    transition: all 1s ease 0s;
+    top: 0;
+    overflow: hidden;
+}
+
+
+.button_text::before,
+.button_text::after{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #eee;
+   
+}
+
+.button_text::before{
+    left: 0;
+    z-index: 2;
+}
+
+.button_text::after{
+    right: 0;
+}
+
+.button_text > span{
+    position: relative;
+    z-index: 2;
+}
+
+.button:hover:before,
+.button:hover:after{
+    left: 100%;
+    opacity: 0;
+}
+
+.button:hover .button_text:before{
+    width: 100%;
+    transition: all 0.8s ease 0s;
+}
+
+.button:hover .button_text:before,
+.button:hover .button_text:after{
+    background-color: rgb(6, 203, 196);
+}
+
+.button:hover .button_text{
+    top: -10px;
+    color: #fff;
+    transition: all 0.5s ease 0.2s;
+    box-shadow: 0 5px 5px 0 #0c5b52;
+}
+
+.button:active .button_text{
+    top: - 7px;
+    box-shadow: 0 2px 0px 0 #0c5b52;
+    transition: all 0.1s ease 0s;
+}
+
+@keyframes rotate{
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+      }
+}
