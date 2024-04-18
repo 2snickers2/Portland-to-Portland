@@ -1,0 +1,6 @@
+.cover__background {
+    height: auto;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
