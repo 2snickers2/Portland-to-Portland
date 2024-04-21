@@ -1,7 +1,6 @@
 .underline-block {
     position: relative;
 }
-
 .underline-block::after {
     content: '';
     position: absolute;
